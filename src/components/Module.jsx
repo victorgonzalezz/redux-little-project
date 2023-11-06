@@ -43,8 +43,8 @@ export function Module({ moduleIndex, title, amountOfLessons }) {
                 key={lesson.id}
                 title={lesson.title}
                 duration={lesson.duration}
-                onPlay={() => dispatch(play([moduleIndex, lessonIndex]))}
                 isCurrent={isCurrent}
+                onPlay={() => dispatch(play([moduleIndex, lessonIndex]))}
               />
             )
         })}
