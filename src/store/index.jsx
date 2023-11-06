@@ -8,5 +8,4 @@ export const store = configureStore({
     player,
   }
 })
-
 export const useAppSelector = useSelector;
