@@ -1,15 +1,9 @@
-import { useAppSelector } from "../store"
+import { useCurrentLesson } from "../store/slices/player"
 
 /* eslint-disable react/no-unescaped-entities */
 export function Header() {
-  const { currentModule, currentLesson} = useAppSelector(state => {
-    const { currentModuleIndex, currentLessonIndex } = state.player
+  const { currentModule, currentLesson} = useCurrentLesson()
 
-    const currentModule = state.player.course.modules[currentModuleIndex]
-    const currentLesson = currentModule.lessons[currentLessonIndex]
-    
-    return { currentModule, currentLesson }
-  })
   return (
     <div className="flex flex-col gap-1">
       <h1 className="text-2xl font-bold">{currentLesson.title}</h1>
