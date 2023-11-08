@@ -2,7 +2,11 @@ import { useCurrentLesson } from "../store/slices/player"
 
 /* eslint-disable react/no-unescaped-entities */
 export function Header() {
-  const { currentModule, currentLesson} = useCurrentLesson()
+  const { currentModule, currentLesson } = useCurrentLesson()
+  
+  if (!currentModule || !currentLesson) {
+    return  null
+  }
 
   return (
     <div className="flex flex-col gap-1">
